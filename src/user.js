@@ -47,7 +47,9 @@ class UserContainer extends Component {
               </div>
             )
           })
-        } 
+        }
+        Your total is: ${this.state.cart.reduce(( previousValue, currentValue ) => { 
+          return previousValue += parseInt(currentValue.price) }, 0)}&nbsp; 
         <button onClick={() => this.handleBuy()}>Buy</button>
         </div>
       </div>

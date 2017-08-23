@@ -37,7 +37,6 @@ class AdminContainer extends Component {
             $
             <input
               type="number"
-              placeholder="1.00"
               step="0.01"
               min="0"
               required
