@@ -31,15 +31,28 @@ class UserContainer extends Component {
               <div>
                 <p>{item.productName},&nbsp;
                 ${item.price},&nbsp;
-                {item.description}</p>
+                {item.description}&nbsp;
+                <button onClick={() => this.handleAddToBasket}>Add</button></p>
               </div>
             )
           })
         } 
         </div>
         <div>
-        <br />
-        <button>Buy</button>
+        <h5>Cart:</h5>
+        {
+           this.state.cart.map((cartItem) => {
+            return (
+              <div>
+                <p>{cartItem.productName}</p>
+                <br />
+                <p>Total: ${this.state.total}</p>
+                <br />
+              </div>
+            )
+          })
+        } 
+        <button onClick={() => this.handleBuy}>Buy</button>
         </div>
       </div>
     );
