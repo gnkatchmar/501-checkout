@@ -3,20 +3,17 @@ import React, { Component } from "react";
 class UserContainer extends Component {
   state = {
     cart: [],
-    total: 0,
   };
 
   handleAddToBasket = item => {
     this.setState(state => {
       return {
         cart: [...state.cart, item],
-        total: state.total+item.price,
       };
     });
   }
 
-  handleBuy = (e) => {
-    e.preventDefault();
+  handleBuy = () => {
     this.setState({cart: []});
   };  
 
@@ -32,7 +29,7 @@ class UserContainer extends Component {
                 <p>{item.productName},&nbsp;
                 ${item.price},&nbsp;
                 {item.description}&nbsp;
-                <button onClick={() => this.handleAddToBasket}>Add</button></p>
+                <button onClick={() => this.handleAddToBasket(item)}>Add</button></p>
               </div>
             )
           })
@@ -44,15 +41,14 @@ class UserContainer extends Component {
            this.state.cart.map((cartItem) => {
             return (
               <div>
-                <p>{cartItem.productName}</p>
-                <br />
-                <p>Total: ${this.state.total}</p>
-                <br />
+              <p>{cartItem.productName},&nbsp;
+                ${cartItem.price},&nbsp;
+                {cartItem.description}&nbsp;</p>
               </div>
             )
           })
         } 
-        <button onClick={() => this.handleBuy}>Buy</button>
+        <button onClick={() => this.handleBuy()}>Buy</button>
         </div>
       </div>
     );
