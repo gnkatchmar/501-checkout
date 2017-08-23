@@ -20,6 +20,7 @@ class AdminContainer extends Component {
     this.props.onAddItem(this.state);
     this.setState(EMPTY_PRODUCT);
   };
+  
   render() {
     return (
       <div>
