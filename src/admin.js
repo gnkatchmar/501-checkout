@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./admin.css";
 
 const EMPTY_PRODUCT = {
   productName: "",
@@ -23,7 +24,7 @@ class AdminContainer extends Component {
   
   render() {
     return (
-      <div>
+      <div className="Admin">
         <h1>Admin</h1>
         <div>
           <form onSubmit={this.handleAddItem}>

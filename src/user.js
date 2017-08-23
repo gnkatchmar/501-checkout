@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./user.css";
 
 class UserContainer extends Component {
   state = {
@@ -19,7 +20,7 @@ class UserContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="User">
         <h1>User</h1>
         <div>
         {
@@ -36,7 +37,8 @@ class UserContainer extends Component {
         } 
         </div>
         <div>
-        <h5>Cart:</h5>
+        <hr />
+        <h3>Cart:</h3>
         {
            this.state.cart.map((cartItem) => {
             return (
@@ -49,7 +51,7 @@ class UserContainer extends Component {
           })
         }
         Your total is: ${this.state.cart.reduce(( previousValue, currentValue ) => { 
-          return previousValue += parseInt(currentValue.price) }, 0)}&nbsp; 
+          return previousValue += parseFloat(currentValue.price) }, 0)}&nbsp; 
         <button onClick={() => this.handleBuy()}>Buy</button>
         </div>
       </div>
