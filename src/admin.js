@@ -32,20 +32,26 @@ class AdminContainer extends Component {
               onChange={this.handleChange}
               required
             />
+            <br />
+            $
             <input
               type="number"
+              placeholder="1.00"
+              step="0.01"
               min="0"
               required
               name="price"
               value={this.state.price}
               onChange={this.handleChange}
             />
+            <br />
             <textarea
               name="description"
               value={this.state.description}
               onChange={this.handleChange}
               required
             />
+            <br />
             <button>Add</button>
           </form>
         </div>
@@ -54,9 +60,9 @@ class AdminContainer extends Component {
             this.props.list.map((item) => {
               return (
                 <div>
-                  <h4>{item.productName}</h4>
-                  <h5>${item.price}</h5>
-                  <p>{item.description}</p>
+                  <p>{item.productName},&nbsp;
+                  ${item.price},&nbsp;
+                  {item.description}</p>
                 </div>
               )
             })

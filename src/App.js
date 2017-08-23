@@ -9,7 +9,7 @@ class App extends Component {
   };
   handleAddItem = item => {
     this.setState(state => {
-      state.counter == 0;
+      // state.counter === 0;
       return {
         list: [...state.list, item],
       };
